@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { salons } from "@/data/salons";
+import HomeNav from "@/components/HomeNav";
 
 export default function Home() {
   const features = [
@@ -11,7 +12,9 @@ export default function Home() {
   ];
 
   return (
-    <main className="p-6 space-y-6">
+    <>
+      <HomeNav />
+      <main className="p-6 space-y-6">
       <section>
         <h1 className="text-4xl font-bold mb-2">Beauty Salon Platform</h1>
         <p className="text-lg">
@@ -20,7 +23,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
+      <section id="features">
         <h2 className="text-2xl font-semibold mb-2">Co oferujemy</h2>
         <ul className="list-disc pl-5 space-y-1">
           {features.map((f) => (
@@ -29,7 +32,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section>
+      <section id="salons">
         <h2 className="text-2xl font-semibold mb-2">Nasze salony</h2>
         <ul className="space-y-1">
           {salons.map((salon) => (
@@ -44,6 +47,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
