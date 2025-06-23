@@ -4,49 +4,44 @@ import HomeNav from "@/components/HomeNav";
 
 export default function Home() {
   const features = [
-    "Online bookings with instant confirmations",
-    "Client surveys to personalize services",
-    "Admin panel for managing salon staff and services",
-    "Integrated marketing tools and loyalty program (coming soon)",
-    "Online payments and invoicing (coming soon)",
+    "Rezerwacje online z natychmiastowym potwierdzeniem",
+    "Ankiety klienta do personalizacji usług",
+    "Panel administracyjny do zarządzania salonem i personelem",
+    "Zintegrowane narzędzia marketingowe (wkrótce)",
+    "Płatności online i faktury (wkrótce)",
   ];
 
   return (
     <>
       <HomeNav />
-      <main className="p-6 space-y-6">
-      <section>
-        <h1 className="text-4xl font-bold mb-2">Beauty Salon Platform</h1>
-        <p className="text-lg">
-          Platforma wspierająca salony beauty w zarządzaniu rezerwacjami i
-          budowaniu relacji z klientami.
-        </p>
-      </section>
+      <main>
+        <section className="bg-pink-50 text-center py-20 px-4">
+          <h1 className="text-5xl font-bold mb-4">Zarządzaj swoim salonem łatwiej</h1>
+          <p className="text-lg mb-8">Nowoczesne narzędzie do rezerwacji i komunikacji z klientami.</p>
+          <Link href="#features" className="bg-pink-600 text-white px-6 py-3 rounded">Dowiedz się więcej</Link>
+        </section>
 
-      <section id="features">
-        <h2 className="text-2xl font-semibold mb-2">Co oferujemy</h2>
-        <ul className="list-disc pl-5 space-y-1">
-          {features.map((f) => (
-            <li key={f}>{f}</li>
-          ))}
-        </ul>
-      </section>
+        <section id="features" className="py-16 px-4 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-4 text-center">Co oferujemy</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            {features.map((f) => (
+              <li key={f}>{f}</li>
+            ))}
+          </ul>
+        </section>
 
-      <section id="salons">
-        <h2 className="text-2xl font-semibold mb-2">Nasze salony</h2>
-        <ul className="space-y-1">
-          {salons.map((salon) => (
-            <li key={salon.slug}>
-              <Link
-                href={`/${salon.slug}`}
-                className="text-blue-500 hover:underline"
-              >
-                {salon.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section id="salons" className="py-16 px-4 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-4 text-center">Nasze salony</h2>
+          <ul className="space-y-2 text-center">
+            {salons.map((salon) => (
+              <li key={salon.slug}>
+                <Link href={`/${salon.slug}`} className="text-blue-600 hover:underline">
+                  {salon.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
     </>
   );
